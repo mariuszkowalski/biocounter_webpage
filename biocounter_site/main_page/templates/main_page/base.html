@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main_page/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'main_page/css/additional.css' %}"/>
+	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="{% static 'main_page/js/bootstrap.min.js' %}"></script>
+	<script language="javascript" type="text/javascript" src="{% static 'biocomain_pageunter/js/additional_scripts.js' %}"></script>
+</head>
+
+<body class="bc_background">
+<!-- INDICATION -->
+<!-- A hedaer menu-->
+<div class="bc_wrapper">
+	<div class="bc_header_frame">
+		<div class="bc_header_main">
+			<img class="bc_logo_img" src="{% static 'main_page/images/biocounter_logo_small_2.png' %}"
+                alt="Bio Counter logo" title="Bio Counter logo"/> 
+			<text class="bc_header_page_name">Bio Counter</text>
+			<ul class="nav nav-pills pull-right">
+				<li role="presentation" class="active"><a href="{% url 'index' %}">Home</a></li>
+				<li role="presentation"><a href="{% url 'features' %}">Features</a></li>
+				<li role="presentation"><a href="{% url 'support' %}">Support</a></li>
+				<li role="presentation"><a href="{% url 'comments' %}">Comments</a></li>
+				<li role="presentation"><a href="{% url 'download' %}">Download</a></li>
+			</ul>
+		</div>
+		<div class="bc_header_underscore">
+		</div>
+	</div>
+
+
+	{% block content %}{% endblock %}
+	<!-- FOOTER -->
+	<div class="bc_footer_frame">
+		<div class="bc_footer_line">
+		</div>
+		<!-- TECHNOLOGIES USED -->
+		<div class="bc_footer_main">
+			<div class="bc_footer_author">
+				<p>Created by Mariusz Kowalski &copy 2017</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+{% extends 'main_page\base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="bc_one_column_frame">
+                <h3>Support</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    If You have found a bug please send a description of the problem:
+                    <a class="bc_link_color" href="mailto:biocounter.support@gmail.com">
+                    support@biocounter.org</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="bc_one_column_frame">
+                <h3>Manual</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    Short instruction how to use the software.<br>
+                    The main program window have four main parts:
+                    <ul>
+                        <li><a class="bc_link_color" href="#menu_bar_manual">
+                            Menu bar at the top</a></li>
+                        <li><a class="bc_link_color" href="#image_area_manual">
+                            Image area at the center</a></li>
+                        <li><a class="bc_link_color" href="#status_bar_manual">
+                            Status bar at the bottom</a></li>
+                        <li><a class="bc_link_color" href="#tab_window_manual">
+                            Tab window at the right side</a></li>
+                    </ul>
+                    <br>
+                </p>
+                <h4 id="menu_bar_manual">Menu bar</h4>
+                <p>
+                    Menu bar has been divided into three parts:
+                    <ul>
+                        <li>File - allows to oppen and close files.
+                            <div class="manual_tip">
+                                Keyboard shortcuts:
+                                <ul>
+                                    <li>Ctrl + O - to open a file</li>
+                                    <li>Ctrl + S - to save processed file</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>Window - contains options to change window size and to
+                        enable "Always on top" mode.</li>
+                            <div class="manual_tip">
+                                Keyboard shortcut:
+                                <ul>
+                                    <li>Ctrl + T - to togle "Always on top" mode</li>
+                                </ul>
+                            </div>
+                        <li>About - allows to show pop up window containing information
+                        regarding the software.</li>
+                    </ul>
+                    <br>
+                </p>
+                <h4 id="image_area_manual">Image area</h4>
+                <p>
+                    Image area takes the most space of the program window.
+                    The loaded images are placed in this area and this is only
+                    part of the window where placeing of a marker is allowed.
+                    This area also allows for zooming in and out of an image. If the
+                    image size is bigger than designated space aproperiate scrollbars
+                    will appear to at the bottom or the right side of the Image area.
+                    <ul>
+                        <li>Lleft mouse button - to place active marker in the image.</li>
+                        <li>Right mouse button - near placed marker to remove it
+                            from the image.</li>
+                        <li>Mouse wheel - to scroll the image vartically</li>
+                        <li>Shift + mouse wheel - to scroll the image horizontally.</li>
+                        <li>Ctrl + mouse wheel - to use the zoom function.</li>
+                    </ul>
+                    Example of image area containing few markers already placed:
+                    <img class="img-responsive img_mod"
+                        src="{% static 'main_page/images/image_area_example_1.jpg' %}"
+                        alt="Python version" title="Python version"/>
+                    <br>
+                </p>
+                <h4 id="status_bar_manual">Status bar</h4>
+                <p>
+                    Status bar shows few information regarding working of the aplication.
+                    The option has been inplemented but has not been used extensivly.<br>
+                    For example when marker size is changed using the keyboard shortcut,
+                    the current marker size is shown at the status bar.<br>
+                <br>
+                </p>
+                <h4 id="tab_window_manual">Tab window</h4>
+                <p>
+                    Tab window is part of the window containing all necessary tools and
+                    settings for those tools. It has been divided into three tabs:
+                    <ul>
+                        <li>Markers tab.
+                            <p>
+                                Markers tab consits of 8 exact parts. Each part contains:
+                                sample name entry box, four switches for marker activation and
+                                indicator of the current marker color. Marker activation switches
+                                corresponds to qualifiers and given qualifier is common for all
+                                different samples. Description of the qualifier is adjustable.
+                                If the description length of qualifier exeds 3 letters, the shortened
+                                description will be presented in the button, but export of
+                                the statistics will have full description included.   
+                                <img class="img-responsive img_mod"
+                                    src="{% static 'main_page/images/support_markers_tab.jpg' %}"
+                                    alt="Markers tab" title="Markers tab"/>
+                                <ul>
+                                    <li>
+                                To change sample description simply click left mouse button inside
+                                the field and type new name.
+                                    </li>
+                                    <li>
+                                Pressing the qualifier button with left mouse button activates
+                                given marker. The button acts as switch and the marker stays activated
+                                until any other activation button is pressed. The marker will be still
+                                activated, even after going to another tab.
+                                After that it is ready to place in the canvas.
+                                    </li>
+                                    <li>
+                                To change color of given marker press color label with left
+                                mouse button. Color dialog box will pop up. After picking new
+                                color every marker from this set will update its color and new
+                                color will be automaticly applied to new markers.
+                                    </li>
+                                    <li>
+                                To clear all markers press "Clear all markers" button. Using this
+                                options clears also all the statistics. There is no confirmation
+                                window for that option and there is no undo option in the program.
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>Statistics tab.</li>
+                            <p>
+                                Statistics tab is divided into 8 parts, each for the different
+                                marker. Those part has been divided into rows and columns, to
+                                create grid structure.
+                                <img class="img-responsive img_mod"
+                                    src="{% static 'main_page/images/support_statistics_tab.jpg' %}"
+                                    alt="Statistics tab" title="Statistics tab"/>
+                                <ul>
+                                    <li>
+                                Header section of contains shortened qualifier descriptions
+                                separated into columns and description for the sum column.         
+                                    </li>
+                                    <li>
+                                Each section of the statistics tab corresponds to different sample.
+                                First row is labeled as "S + number" which indicates given sample.
+                                The numbers in the row corresponds to the numbers of placed markers for
+                                each qualifier, sum of the all qualifiers is shown as the last number.
+                                Second row is labeled "%" which indicates percentage of
+                                the corresponding qualifier quantity, shown directly above. 
+                                    </li>
+                                    <li>
+                                To export all acquired quantities and statistics press
+                                "Export as *.csv" button. An export dialog box will pop up.
+                                Choose folder and file name for exported file. The CSV file
+                                can be open with any office spreadsheet software and go
+                                under further analysis.
+                                    </li>
+                                </ul>
+                            </p>
+                        <li>Options tab.</li>
+                            <p>
+                                Options tab contains additional options for the qualifiers and
+                                markers.
+                                <img class="img-responsive img_mod"
+                                    src="{% static 'main_page/images/support_options_tab.jpg' %}"
+                                    alt="Statistics tab" title="Statistics tab"/>
+                                <ul>
+                                    <li>
+                                Qualifiers section contains four different entry fields, each
+                                for every qualifier. The description of any qualifier may be
+                                changed here.
+                                    </li>
+                                    <li>
+                                Dummy buttons has been placed to show a description preview.
+                                The button label is limited to three characters and if longer
+                                qualifier name is provided, the description will be shortened.
+                                Period at the end of the button label is an indication
+                                that description had been shortened.        
+                                    </li>
+                                    <li>
+                                In the markes size section there are buttons to decrease and
+                                increase size of all markers. The default value is set to 10.
+                                To decrease or increase the size press corresponding button
+                                using left mouse button. The minimal size of marker is 4 and
+                                maximum is 20.
+                                        <div class="manual_tip">
+                                            Keyboard shortcuts:
+                                            <ul>
+                                                <li>Ctrl + down arrow - to decrease size of marker</li>
+                                                <li>Ctrl + up arrow - to increase size of marker</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </p>
+                    </ul>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="detailed_installation_guides" class="bc_one_column_frame">
+                <h3>Detailed installation guides</h3>
+                <div class="small_separator_line">
+                </div>
+                <h4>Windows Python version</h4>
+                <p>
+                    This detailed installation guide contains step-by-step procedure
+                    for very beginner users, which would like to use Python version
+                    of the Bio Counter.
+                </p>
+                <ol>
+                    <li>Download and install Python in the version at least 3.4.4 from
+                        official
+                        <a class="bc_link_color" href="https://www.python.org" target="_blank">page</a>.
+                        <br>
+                        From the "Downloads" tab choose "Windows". Choose latest release or at least
+                        Python 3.4.4 and download "Windows x86 executable installer".
+                        <img class="img-responsive img_mod"
+                            src="{% static 'main_page/images/installation_guide_w1.jpg' %}"
+                            alt="Python version" title="Python version"/>
+                        <br>
+                    </li>
+                    <li>
+                        Run windows console aplication (cmd). Look for it in the start menu or mouse
+                        an keyborad shortcut, holding "windows" key press "r" button,
+                        in pop up windows type:<br>
+                        <code>cmd</code><br>
+                        Next press "Enter" key or press "ok" button.<br>
+                        Console window should appear.
+                        <img class="img-responsive img_mod"
+                            src="{% static 'main_page/images/installation_guide_w2.jpg' %}"
+                            alt="CMD window" title="cmd window"/>
+                        <br>                        
+                    </li>
+                    <li>
+                        In the console window type:<br>
+                        <code>python -m pip install --upgrade pip</code><br>
+                        Press "Enter".<br>
+                        This is going to assure You will have the latest version of the Python package
+                        manager installed.
+                        <img class="img-responsive img_mod"
+                            src="{% static 'main_page/images/installation_guide_w3.jpg' %}"
+                            alt="PIP upgrade" title="PIP upgrade"/>
+                        <br> 
+                    </li>
+                    <li>
+                        Next in the console window type:<br>
+                        <code>pip install pillow</code><br>
+                        Press "Enter".<br>
+                        This command is going to install the library required to Bio Counter work.
+                        <img class="img-responsive img_mod"
+                            src="{% static 'main_page/images/installation_guide_w4.jpg' %}"
+                            alt="Pillow library instalation" title="Pillow library instalation"/>
+                        <br> 
+                    </li>
+                    <li>
+                        If You have not done it yet, download and unzip Python version of
+                        the Bio Counter with Your favorite archive manager.<br>
+                        <br>
+                    </li>
+                    <li>
+                        If everything went without any errors Bio Counter should launch after
+                        double clicking of the "run.pyw" file in the main directory.
+                        <img class="img-responsive img_mod"
+                            src="{% static 'main_page/images/installation_guide_w5.jpg' %}"
+                            alt="Bio Counter launcher" title="Bio Counter launcher"/>
+                        <br>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="bc_page_bottom_gap">
+    </div>
+</div>
+
+{% endblock %}

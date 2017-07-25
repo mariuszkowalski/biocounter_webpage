@@ -1,0 +1,92 @@
+{% extends 'main_page\base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame left">
+                <h3>Leave new comment:</h3>
+                <div class="small_separator_line">
+                </div>
+                <form action="{% url 'comments' %}" method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        {% if field.name == "comment_author" %}
+                        <div class="form-group">
+                            <label for="id_{{ field.name }}">Comment author:</label>
+                            <input type="text" class="form-control" name="{{ field.name }}"
+                                maxlength="{{ form.name.field.max_length }}" required
+                                id=id_"{{ field.name }}" placeholder="Nick">
+                        </div>
+                        {% else %}
+                        <div class="form-group">
+                            <label for="id_{{ field.name }}">Comment:</label>
+                            <textarea class="form-control" rows="5" name="{{ field.name }}"
+                                maxlength="{{ form.name.field.max_length }}" required
+                                id="id_{{ field.name }}" placeholder="Text of Your comment"></textarea>
+                        </div>
+                        {% endif %}
+
+                    {% endfor %}
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <!-- Message after successful form post -->
+                <!-- Using tag success -->
+                <div class="small_separator">
+                </div>
+                {% if messages %}
+                
+                <div class="alert alert-success" role="alert" id="comment_success"> 
+                    <ul class="list-unstyled">
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame right">
+                <h3>Read a comment.</h3>
+                <div class="small_separator_line">
+                </div>
+                <table class="table table-hover">
+                
+                {% if last_comments_list %}
+                <caption>Contains only 40 last comments.</caption>
+                {% else %}
+                <caption>Contains only 40 last comments, no comments are currently avaliable.</caption>
+                {% endif %}
+                
+                {% if last_comments_list %}
+                <thead>
+                    <tr>
+                        <th class="text_to_right">Comment author</th>
+                        <th>Posted</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for comment in last_comments_list %}
+                    <tr>
+                        <td class="text_to_right">{{ comment.comment_author }}</td>
+                        <td width="100">{{ comment.comment_date }}</td>
+                        <td>{{ comment.comment_text }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                {% else %}
+                {% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="bc_page_bottom_gap">
+    </div>
+</div>
+
+{% endblock %}

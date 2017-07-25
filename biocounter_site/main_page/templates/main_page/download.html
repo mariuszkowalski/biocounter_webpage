@@ -1,0 +1,119 @@
+{% extends 'main_page\base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="bc_one_column_frame">
+                <h3>General informations</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>This section contains all program files You may need.<br><br>
+
+                    Bio Counter currently supports only Windows operating system, in the Python
+                    version and in the compiled Standalone version. It does not work due to
+                    differences in module names and inplementation in mouse support between
+                    Windows, Linux and OSX. <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame left">
+                <h3>Download Python Version</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    Requires Windows 7 or newer with Python 3.4.4 or newer and Pillow library installed.<br>
+                    Scroll down for installation informations.
+                    <br><br>
+                </p>
+
+                <a class="btn btn-success"
+                    href="{% static 'main_page/files/current/BioCounter1.0.zip' %}"
+                    download role="button">
+					Bio Counter 1.0
+				</a>
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame right">
+                <h3>Download Standalone Version</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    Requires Windows 7 or newer.<br>
+                    No installation required, just unzip the archive.
+                    <br><br>
+                </p>
+                <a class="btn btn-success"
+                    href="{% static 'main_page/files/current/BioCounter_standalone_1.0.zip' %}"
+                    download role="button">
+					Bio Counter Standalone 1.0
+				</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="bc_one_column_frame middle">
+                <h3>Instllation guides</h3>
+                <div class="small_separator_line">
+                </div>
+                <h4>Windows Python version</h4>
+                <p>
+                    This installation guide is for Windows machines only. Due to differences in
+                    module names and implementation in mouse support BioCounter in current version
+                    will not work properly in the other operating systems.
+                </p>
+                <ol>
+                    <li>Download and install Python in the version at least 3.4.4 from
+                        official
+                        <a class="bc_link_color" href="https://www.python.org" target="_blank">page</a>.
+                    </li>
+                    <li>
+                        Run windows console aplication (cmd). Look for it in the start menu or mouse
+                        an keyborad shortcut, holding "windows" key press "r" button,
+                        in pop up windows type:<br>
+                        <code>cmd</code><br>
+                        Next press "Enter" key or press "ok" button.
+                    </li>
+                    <li>
+                        In the console window type:<br>
+                        <code>python -m pip install --upgrade pip</code><br>
+                        This is going to assure You will have the latest version of the Python package
+                        manager installed.
+                    </li>
+                    <li>
+                        Next in the console window type:<br>
+                        <code>pip install pillow</code><br>
+                        This command is going to install the library required for Bio Counter to work.
+                    </li>
+                    <li>
+                        If You have not done it yet, download and unzip Python version of
+                        the Bio Counter.
+                    </li>
+                    <li>
+                        If everything went without any errors Bio Counter should lounch after
+                        double clicking of the "run.py" file in the main directory.
+                    </li>
+                </ol>
+                    If You have installation problems please refer to
+                    <a class="bc_link_color"
+                        href="{% url 'support' %}#detailed_installation_guides">
+                    detailed installation guides</a>
+                    in the Support section of the page.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="bc_page_bottom_gap">
+    </div>
+</div>
+
+{% endblock %}

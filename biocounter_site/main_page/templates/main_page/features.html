@@ -1,0 +1,141 @@
+{% extends 'main_page\base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="bc_one_column_frame">
+                <h3>Features</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>The list of main features of the Bio Counter and biref instruction how to use it.<br>
+                </p>
+                <ul>
+                    <li>Load any photo or image into the program in the most
+                        common formats.</li>
+                    <li>Count any objects by placeing an markers in the image.</li>
+                    <li>Look for the counts in the statistics tab.</li>
+                    <li>Export the image containing all placed markers.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame left">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>Image load</h3>
+                        <div class="small_separator_line">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">       
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <p>
+                            Load and save image files containing any
+                            elements to count.
+                            <br>
+                        </p>
+                        <ul>
+                            <li>Supported file formats: JPEG, PNG and TIFF.</li>
+                            <li>Choose the quality of exported images.</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <img class="img-responsive img_mod" src="{% static 'main_page/images/features_5.jpg' %}"
+                            alt="Image load" title="Image laod"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame right">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>Markers managemet</h3>
+                        <div class="small_separator_line">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">       
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">   
+                        <p>
+                            Place up to 4 different markers, containing up to 8 group.<br>
+                        </p>
+                        <ul>
+                            <li>Change description and color of any marker group.</li>
+                            <li>Change description of any marker.</li>
+                            <li>Increase or decrease marker size to assure best visibility.</li>    
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <img class="img-responsive img_mod" src="{% static 'main_page/images/features_6.jpg' %}"
+                            alt="Markers managemet" title="Markers managemet"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame left">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>Statistics view</h3>
+                        <div class="small_separator_line">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">       
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+                        <p>
+                            Look through statistics tab to quickly check counts and percentages.
+                            <br>
+                        </p>
+                        <ul>
+                            <li>Export all analytics data as CSV file, to be easily open
+                                in any spreadsheet software for further analysis.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <img class="img-responsive img_mod" src="{% static 'main_page/images/features_7.jpg' %}"
+                            alt="Statistic view" title="Statistic view"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame right">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>Other features</h3>
+                        <div class="small_separator_line">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">       
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+                        <p>
+                            Biocounter is small but contains other features to increase work flow.<br>
+                        </p>
+                        <ul>
+                            <li>Image zoom capability.</li>
+                            <li>Shortcuts to make the work much faster.</li>
+                            <li>Ability to set window in "always on top" mode.</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <img class="img-responsive img_mod" src="{% static 'main_page/images/features_8.jpg' %}"
+                            alt="Other features" title="Other features"/>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bc_page_bottom_gap">
+    </div>
+</div>
+{% endblock %}

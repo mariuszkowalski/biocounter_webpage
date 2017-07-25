@@ -1,0 +1,60 @@
+{% extends 'main_page\base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<div class="bc_index_picture_frame">
+    <div class="bc_index_picture">
+        <img class="img-responsive" src="{% static 'main_page/images/raw_image_2.jpg' %}"
+            alt="Ducks at a bay" title="Ducks at a bay area"/>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame left">
+                <h3>About Bio Counter</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    Bio Counter is the free oppen source software for counting various
+                    elements in a biological science. It was created with ornitilogy
+                    purposes in mind, but it may also be used for other application with
+                    a great success.
+                </p>
+                <p>
+                    The program is good anywhere if there is a need to count various elements
+                    form the picture and divide those into sets.
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="bc_two_columns_frame right">
+                <h3>Get it</h3>
+                <div class="small_separator_line">
+                </div>
+                <p>
+                    Bio Counter is free and open source. You may use it anyway you want and even
+                    modify its code to better suite Your needs.
+                </p>
+                <p>
+                    Download current version or go to 
+                    <a class="bc_link_color" href="{% url 'download' %}">download</a>
+                    page.<br><br>
+                </p>
+
+                <a class="btn btn-success" href="{% url 'download' %}" role="button">
+					Get Bio Counter 1.0
+				</a>
+            </div>
+        </div>
+    </div>
+    <div class="bc_page_bottom_gap">
+    </div>
+</div>
+
+<!--<h1 style="margin-left: 20px">Index page of the Biocounter Site.</h1>-->
+
+{% endblock %}
