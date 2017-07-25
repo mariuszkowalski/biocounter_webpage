@@ -17,18 +17,18 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from main_page.views import (
-	index,
-	download,
-	features,
-	support,
-	comments,
+	IndexView,
+	DownloadView,
+    FeaturesView,
+    SupportView,
+    CommentsView,
 	)
 
 urlpatterns = [
-    url(r'^$', index, name='index'),
-    url(r'^download/', download, name='download'),
-    url(r'^features/', features, name='features'),
-    url(r'^support/', support, name='support'),
-    url(r'^comments/', comments, name='comments'),
+    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^download/', DownloadView.as_view(), name='download'),
+    url(r'^features/', FeaturesView.as_view(), name='features'),
+    url(r'^support/', SupportView.as_view(), name='support'),
+    url(r'^comments/', CommentsView.as_view(), name='comments'),
     url(r'^admin/', admin.site.urls),
 ]
