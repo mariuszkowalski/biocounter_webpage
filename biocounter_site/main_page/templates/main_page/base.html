@@ -11,6 +11,7 @@
 	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="{% static 'main_page/js/bootstrap.min.js' %}"></script>
 	<script language="javascript" type="text/javascript" src="{% static 'main_page/js/additional_scripts.js' %}"></script>
+	<script language="javascript" type="text/javascript" src="{% static 'main_page/js/cookies_info.js' %}"></script>
 </head>
 
 <body class="bc_background">
@@ -33,7 +34,19 @@
 		<div class="bc_header_underscore">
 		</div>
 	</div>
-
+	<div class="cookie_banner" id="cookie_banner">
+		<p>
+			Our site saves small pieces of text information (cookies) on your device in 
+			order to deliver better content and for statistical purposes. You can 
+			disable the usage of cookies by changing the settings of your browser. By 
+			browsing our website without changing the browser settings you grant us 
+			permission to store that information on your device.
+			<span class="close_cookie_banner" id="close_cookie_banner"
+				onclick="toggleVisibility('cookie_banner')">
+				CLOSE [x]
+			</span>
+		</p>
+	</div>
 
 	{% block content %}{% endblock %}
 	<!-- FOOTER -->
